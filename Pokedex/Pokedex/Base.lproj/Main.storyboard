@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="height" constant="65" id="jFf-gb-hV0"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" searchBarStyle="prominent" translatesAutoresizingMaskIntoConstraints="NO" id="WfS-Ey-5vR">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="WfS-Ey-5vR">
                                 <rect key="frame" x="0.0" y="65" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="qWT-P1-kKH"/>
