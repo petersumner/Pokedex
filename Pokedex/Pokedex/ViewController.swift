@@ -24,6 +24,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokeCell", for: indexPath) as? PokeCell {
             
+            let pokemon = Pokemon(name: "Pokemon", pokedexID: indexPath.row)
+            cell.configureCell(pokemon: pokemon)
+            
             return cell
             
         } else {
