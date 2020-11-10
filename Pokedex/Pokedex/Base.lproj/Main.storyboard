@@ -16,23 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Caf-oJ-cbn">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pokedex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPL-Yk-gvG">
-                                        <rect key="frame" x="150" y="15" width="75" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="jFf-gb-hV0"/>
-                                </constraints>
-                            </view>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="WfS-Ey-5vR">
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Search Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="WfS-Ey-5vR">
                                 <rect key="frame" x="0.0" y="65" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="qWT-P1-kKH"/>
@@ -91,12 +75,29 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Caf-oJ-cbn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pokedex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPL-Yk-gvG">
+                                        <rect key="frame" x="150" y="15" width="75" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="jFf-gb-hV0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Juj-WL-IDA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BvJ-je-yaD"/>
                             <constraint firstItem="Caf-oJ-cbn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BvR-XA-j7A"/>
                             <constraint firstItem="WfS-Ey-5vR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MaU-9t-7hH"/>
+                            <constraint firstItem="Caf-oJ-cbn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RgD-EG-5F2"/>
                             <constraint firstItem="Caf-oJ-cbn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Skn-xn-79H"/>
                             <constraint firstItem="WfS-Ey-5vR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TeV-0c-iVB"/>
                             <constraint firstItem="WfS-Ey-5vR" firstAttribute="top" secondItem="Caf-oJ-cbn" secondAttribute="bottom" id="Xf0-CZ-kix"/>

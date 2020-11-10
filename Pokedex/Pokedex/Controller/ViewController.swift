@@ -105,7 +105,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return CGSize(width: 105, height: 105)
     }
     
-    func searchBarButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         view.endEditing(true)
     }
@@ -126,7 +126,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             filteredPokemon = pokemon.filter({ $0.name.range(of: lower) != nil })
             collection.reloadData()
-            
         }
     }
     
