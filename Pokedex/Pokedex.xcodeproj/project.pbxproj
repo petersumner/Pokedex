@@ -61,6 +61,30 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D062F6FE25587F3600674AC5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D083D7D22558297700D465DE /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D062F6FF25587F6700674AC5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D062F6F42558540D00674AC5 /* pokemon.csv */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D062F70025587F8900674AC5 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D062F6FC25586DA200674AC5 /* csv.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		D083D7C22558297700D465DE = {
 			isa = PBXGroup;
 			children = (
@@ -80,17 +104,17 @@
 		D083D7CD2558297700D465DE /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
-				D062F6F925585B4000674AC5 /* View */,
 				D062F6F6255854D400674AC5 /* Model */,
+				D062F6F925585B4000674AC5 /* View */,
+				D062F6FE25587F3600674AC5 /* Controller */,
+				D062F6FF25587F6700674AC5 /* Resources */,
+				D062F70025587F8900674AC5 /* Util */,
 				D083D7CE2558297700D465DE /* AppDelegate.swift */,
 				D083D7D02558297700D465DE /* SceneDelegate.swift */,
-				D083D7D22558297700D465DE /* ViewController.swift */,
 				D083D7D42558297700D465DE /* Main.storyboard */,
 				D083D7D72558297A00D465DE /* Assets.xcassets */,
-				D062F6F42558540D00674AC5 /* pokemon.csv */,
 				D083D7D92558297A00D465DE /* LaunchScreen.storyboard */,
 				D083D7DC2558297A00D465DE /* Info.plist */,
-				D062F6FC25586DA200674AC5 /* csv.swift */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
