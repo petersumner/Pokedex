@@ -81,8 +81,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
         }
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        var poke: Pokemon!
+        
+        if inSearchMode {
+            
+            poke = filteredPokemon[indexPath.row]
 
+        } else {
+            
+            poke = pokemon[indexPath.row]
+            
+        }
+        
+        performSegue(withIdentifier: "DetailViewController", sender: poke)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
