@@ -143,6 +143,9 @@
                                         <rect key="frame" x="8" y="35" width="21" height="22"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="arrowshape.turn.up.left.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="C8h-k1-Hmt" eventType="touchUpInside" id="PFw-mG-Zxb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -470,7 +473,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="6Vh-yB-xKF"/>
                     <connections>
+                        <outlet property="attackLbl" destination="p8Y-GA-M6e" id="6gS-hw-4hv"/>
+                        <outlet property="defenseLbl" destination="yVo-EO-ACp" id="w6I-wu-RdH"/>
+                        <outlet property="descriptionLbl" destination="3Qf-Oo-ZPk" id="FIR-80-4wy"/>
+                        <outlet property="evoLbl" destination="W3m-14-yCn" id="mFo-tZ-TjH"/>
+                        <outlet property="heightLbl" destination="avF-wO-KA7" id="5Jg-ug-CS0"/>
+                        <outlet property="hpLbl" destination="nKr-s0-pIj" id="icC-in-Ixk"/>
+                        <outlet property="mainImg" destination="ER1-Qq-egw" id="tJj-H4-0cf"/>
                         <outlet property="nameLbl" destination="XWy-gg-Y4y" id="x1Y-vc-3zj"/>
+                        <outlet property="nextEvoImg" destination="hfv-cp-FfR" id="cHj-T9-tvD"/>
+                        <outlet property="pokedexLbl" destination="pr9-bx-3OA" id="uFA-KC-3E9"/>
+                        <outlet property="prevEvoImg" destination="x13-pq-oEu" id="4Tw-vR-EcJ"/>
+                        <outlet property="spatkLbl" destination="aZh-26-k0e" id="5Gg-UA-ylR"/>
+                        <outlet property="spdefLbl" destination="Ev0-HW-lcZ" id="475-IJ-Pio"/>
+                        <outlet property="speedLbl" destination="PG6-9b-NUC" id="oq1-Gm-th2"/>
+                        <outlet property="typeLbl" destination="Der-xk-ygc" id="vEh-cQ-t02"/>
+                        <outlet property="weightLbl" destination="OAM-WN-xl8" id="fIA-xD-JWy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I31-w7-4Uw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
