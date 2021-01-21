@@ -26,6 +26,90 @@ class Pokemon {
     private var _speed: String!
     private var _evoTxt: String!
     private var _pokemonURL: String!
+
+    var description: String {
+        if _description == nil {
+            _description = ""
+        }
+        return _description
+    }
+    
+    var primaryType: String {
+        if _primaryType == nil {
+            _primaryType = ""
+        }
+        return _primaryType
+    }
+    
+    var secondaryType: String {
+        if _secondaryType == nil {
+            _secondaryType = ""
+        }
+        return _secondaryType
+    }
+    
+    var height: String {
+        if _height == nil {
+            _height = ""
+        }
+        return _height
+    }
+    
+    var weight: String {
+        if _weight == nil {
+            _weight = ""
+        }
+        return _weight
+    }
+    
+    var hp: String {
+        if _hp == nil {
+            _hp = ""
+        }
+        return _hp
+    }
+    
+    var attack: String {
+        if _attack == nil {
+            _attack = ""
+        }
+        return _attack
+    }
+    
+    var defense: String {
+        if _defense == nil {
+            _defense = ""
+        }
+        return _defense
+    }
+    
+    var spatk: String {
+        if _spatk == nil {
+            _spatk = ""
+        }
+        return _spatk
+    }
+    
+    var spdef: String {
+        if _spdef == nil {
+            _spdef = ""
+        }
+        return _spdef
+    }
+    
+    var speed: String {
+        if _speed == nil {
+            _speed = ""
+        }
+        return _speed
+    }
+    
+    var evoTxt: String {
+        if _evoTxt == nil {
+            _evoTxt = ""
+        }
+        return _evoTxt
+    }
     
     var name: String {
         return _name
