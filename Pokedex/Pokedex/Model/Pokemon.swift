@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class Pokemon {
     
@@ -23,6 +24,7 @@ class Pokemon {
     private var _spdef: String!
     private var _speed: String!
     private var _evoTxt: String!
+    private var _pokemonURL: String!
     
     var name: String {
         return _name
@@ -33,7 +35,12 @@ class Pokemon {
     }
     
     init(name: String, pokedexID: Int) {
-        self._name = name
+        self._name = name.capitalized
         self._pokedexID = pokedexID
+        self._pokemonURL = "\(URL_BASE)\(URL_POKEMON)\(self.pokedexID)/"
+    }
+    
+    func downloadPokemonDetail(completed: DownloadComplete) {
+        AF.request(_pokemonURL)
     }
 }
