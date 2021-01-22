@@ -33,11 +33,24 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         nameLbl.text = pokemon.name
         pokemon.downloadPokemonDetail {
+            print(pokemon.height)
             self.updateUI()
         }
     }
     
     func updateUI() {
+        mainImg.image = UIImage(named: "\(pokemon.pokedexID)")
+        nameLbl.text = pokemon.name
+        pokedexLbl.text = "\(pokemon.pokedexID)"
+        heightLbl.text = "\(pokemon.height)"
+        weightLbl.text = "\(pokemon.weight)"
+        hpLbl.text = "\(pokemon.stats[0])"
+        attackLbl.text = "\(pokemon.stats[1])"
+        defenseLbl.text = "\(pokemon.stats[2])"
+        spatkLbl.text = "\(pokemon.stats[3])"
+        spdefLbl.text = "\(pokemon.stats[4])"
+        speedLbl.text = "\(pokemon.stats[5])"
+        
         
     }
     
