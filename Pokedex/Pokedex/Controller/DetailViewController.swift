@@ -105,9 +105,6 @@ class DetailViewController: UIViewController {
         spdefText.textColor = colors[pokemon.types[0]]
         speedText.textColor = colors[pokemon.types[0]]
         evoBanner.backgroundColor = colors[pokemon.types[0]]
-
-        
-        
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
