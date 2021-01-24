@@ -14,7 +14,6 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
-    @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var typeLbl: UILabel!
     @IBOutlet weak var pokedexLbl: UILabel!
     @IBOutlet weak var heightLbl: UILabel!
@@ -31,9 +30,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLbl.text = pokemon.name
-        pokemon.downloadPokemonDetail {
-            print(pokemon.height)
+                
+        pokemon.downloadPokemonDetail{
             self.updateUI()
         }
     }
@@ -50,8 +48,6 @@ class DetailViewController: UIViewController {
         spatkLbl.text = "\(pokemon.stats[3])"
         spdefLbl.text = "\(pokemon.stats[4])"
         speedLbl.text = "\(pokemon.stats[5])"
-        
-        
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
