@@ -16,8 +16,8 @@ class Pokemon {
     var pokedexID = 0
     var description = ""
     var types = [String]()
-    var height = 0
-    var weight = 0
+    var height = 0.0
+    var weight = 0.0
     var stats = [Int]()
     var abilities = [String]()
     var hp = 0
@@ -41,8 +41,8 @@ class Pokemon {
             guard let data = response.data else { return }
             do {
                 let json = try JSON(data: data)
-                self.weight = json["weight"].int!
-                self.height = json["height"].int!
+                self.weight = json["weight"].double! / 10
+                self.height = json["height"].double! / 10
                 self.baseExp = json["base_experience"].int!
                 let abilities = json["abilities"].array!
                 for slot in abilities {
