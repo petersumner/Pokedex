@@ -40,6 +40,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var speedText: UILabel!
     @IBOutlet weak var evoBanner: UIView!
     @IBOutlet weak var hpBar: UIProgressView!
+    @IBOutlet weak var atkBar: UIProgressView!
+    @IBOutlet weak var defBar: UIProgressView!
+    @IBOutlet weak var spatkBar: UIProgressView!
+    @IBOutlet weak var spdefBar: UIProgressView!
+    @IBOutlet weak var spdBar: UIProgressView!
     
     var colors = [
         "normal" : UIColor(red: 0.66, green: 0.65, blue: 0.48, alpha: 1.00),
@@ -108,7 +113,23 @@ class DetailViewController: UIViewController {
         evoBanner.backgroundColor = colors[pokemon.types[0]]
         
         hpBar.progressTintColor = colors[pokemon.types[0]]
-        hpBar.progress = Float(pokemon.stats[0] / 255)
+        atkBar.progressTintColor = colors[pokemon.types[0]]
+        defBar.progressTintColor = colors[pokemon.types[0]]
+        spatkBar.progressTintColor = colors[pokemon.types[0]]
+        spdefBar.progressTintColor = colors[pokemon.types[0]]
+        spdBar.progressTintColor = colors[pokemon.types[0]]
+        hpBar.layer.cornerRadius = 12
+        atkBar.layer.cornerRadius = 12
+        defBar.layer.cornerRadius = 12
+        spatkBar.layer.cornerRadius = 12
+        spdefBar.layer.cornerRadius = 12
+        spdBar.layer.cornerRadius = 12
+        hpBar.progress = Float(pokemon.stats[0]) / 255.0
+        atkBar.progress = Float(pokemon.stats[1]) / 255.0
+        defBar.progress = Float(pokemon.stats[2]) / 255.0
+        spatkBar.progress = Float(pokemon.stats[3]) / 255.0
+        spdefBar.progress = Float(pokemon.stats[4]) / 255.0
+        spdBar.progress = Float(pokemon.stats[5]) / 255.0
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {

@@ -288,8 +288,8 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="selectedSegmentTintColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DZZ-oe-86e">
-                                <rect key="frame" x="0.0" y="508" width="375" height="36"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZZ-oe-86e">
+                                <rect key="frame" x="0.0" y="505" width="375" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evolutions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3m-14-yCn">
                                         <rect key="frame" x="0.0" y="8" width="375" height="20"/>
@@ -307,8 +307,8 @@
                                     <constraint firstAttribute="bottom" secondItem="W3m-14-yCn" secondAttribute="bottom" constant="8" id="p9X-iN-ul5"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalCentering" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="MV1-nt-PuB">
-                                <rect key="frame" x="50" y="560" width="275" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="MV1-nt-PuB">
+                                <rect key="frame" x="50" y="557" width="275" height="120"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="x13-pq-oEu">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -448,14 +448,35 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="160" id="6IF-cj-2vJ"/>
+                                        </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ykQ-7U-11j">
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ykQ-7U-11j">
                                         <rect key="frame" x="79.5" y="0.0" width="279.5" height="160"/>
                                         <subviews>
-                                            <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Yl5-cp-din">
-                                                <rect key="frame" x="0.0" y="0.0" width="279.5" height="160"/>
+                                            <progressView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yl5-cp-din">
+                                                <rect key="frame" x="0.0" y="0.0" width="279.5" height="20"/>
+                                            </progressView>
+                                            <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="428-cy-GEG">
+                                                <rect key="frame" x="0.0" y="28" width="279.5" height="20"/>
+                                            </progressView>
+                                            <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="04g-kh-VJY">
+                                                <rect key="frame" x="0.0" y="56" width="279.5" height="20"/>
+                                            </progressView>
+                                            <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wtl-dW-crx">
+                                                <rect key="frame" x="0.0" y="84" width="279.5" height="20"/>
+                                            </progressView>
+                                            <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zri-Ir-cX2">
+                                                <rect key="frame" x="0.0" y="112" width="279.5" height="20"/>
+                                            </progressView>
+                                            <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wic-t1-1OY">
+                                                <rect key="frame" x="0.0" y="140" width="279.5" height="20"/>
                                             </progressView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="160" id="DuK-Bh-AF6"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -470,6 +491,7 @@
                             <constraint firstItem="EHN-NC-bFT" firstAttribute="leading" secondItem="EAD-k1-obI" secondAttribute="leading" id="Ecz-e9-dFS"/>
                             <constraint firstItem="EAD-k1-obI" firstAttribute="trailing" secondItem="FMK-0M-e37" secondAttribute="trailing" constant="8" id="GSl-ir-r6W"/>
                             <constraint firstItem="B0v-1e-ymQ" firstAttribute="leading" secondItem="EAD-k1-obI" secondAttribute="leading" constant="8" id="I9i-Xr-CfK"/>
+                            <constraint firstItem="DZZ-oe-86e" firstAttribute="top" secondItem="B0v-1e-ymQ" secondAttribute="bottom" constant="8" id="XBS-Wj-PpM"/>
                             <constraint firstItem="DZZ-oe-86e" firstAttribute="trailing" secondItem="EAD-k1-obI" secondAttribute="trailing" id="axW-O6-s6S"/>
                             <constraint firstItem="EAD-k1-obI" firstAttribute="trailing" secondItem="9Me-jE-NzV" secondAttribute="trailing" constant="8" id="b92-GX-Zs7"/>
                             <constraint firstItem="GkG-lY-PTE" firstAttribute="top" secondItem="FMK-0M-e37" secondAttribute="bottom" constant="8" id="bEt-cM-fkk"/>
@@ -489,8 +511,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="6Vh-yB-xKF"/>
                     <connections>
+                        <outlet property="atkBar" destination="428-cy-GEG" id="YFD-KA-G4k"/>
                         <outlet property="attackLbl" destination="p8Y-GA-M6e" id="6gS-hw-4hv"/>
                         <outlet property="attacktext" destination="O7Y-wf-k6i" id="c2y-D3-A1S"/>
+                        <outlet property="defBar" destination="04g-kh-VJY" id="AWT-mW-Zbz"/>
                         <outlet property="defenseLbl" destination="yVo-EO-ACp" id="w6I-wu-RdH"/>
                         <outlet property="defenseText" destination="sdf-TN-bVg" id="MpW-tA-6ht"/>
                         <outlet property="evoBanner" destination="DZZ-oe-86e" id="3ah-oy-Zac"/>
@@ -507,8 +531,11 @@
                         <outlet property="pokedexLbl" destination="pr9-bx-3OA" id="uFA-KC-3E9"/>
                         <outlet property="prevEvoImg" destination="x13-pq-oEu" id="4Tw-vR-EcJ"/>
                         <outlet property="segmentHeader" destination="FMK-0M-e37" id="fpU-KL-I2U"/>
+                        <outlet property="spatkBar" destination="wtl-dW-crx" id="d9e-Cr-x2X"/>
                         <outlet property="spatkLbl" destination="aZh-26-k0e" id="5Gg-UA-ylR"/>
                         <outlet property="spatkText" destination="0Ng-BG-lHa" id="CsT-Wm-zIb"/>
+                        <outlet property="spdBar" destination="Wic-t1-1OY" id="foh-D8-sVR"/>
+                        <outlet property="spdefBar" destination="zri-Ir-cX2" id="jwo-7t-p5U"/>
                         <outlet property="spdefLbl" destination="Ev0-HW-lcZ" id="475-IJ-Pio"/>
                         <outlet property="spdefText" destination="g7o-Zb-gQv" id="GSL-C8-SjZ"/>
                         <outlet property="speedLbl" destination="PG6-9b-NUC" id="oq1-Gm-th2"/>
