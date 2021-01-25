@@ -39,6 +39,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var spdefText: UILabel!
     @IBOutlet weak var speedText: UILabel!
     @IBOutlet weak var evoBanner: UIView!
+    @IBOutlet weak var hpBar: UIProgressView!
     
     var colors = [
         "normal" : UIColor(red: 0.66, green: 0.65, blue: 0.48, alpha: 1.00),
@@ -105,6 +106,9 @@ class DetailViewController: UIViewController {
         spdefText.textColor = colors[pokemon.types[0]]
         speedText.textColor = colors[pokemon.types[0]]
         evoBanner.backgroundColor = colors[pokemon.types[0]]
+        
+        hpBar.progressTintColor = colors[pokemon.types[0]]
+        hpBar.progress = Float(pokemon.stats[0] / 255)
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
