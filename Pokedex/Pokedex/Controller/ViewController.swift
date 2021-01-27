@@ -134,10 +134,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         } else {
             
             inSearchMode = true
-            
             let lower = searchBar.text!.lowercased()
-            
-            filteredPokemon = pokemon.filter({ $0.name.range(of: lower) != nil })
+            filteredPokemon = pokemon.filter({ $0.name.lowercased().range(of: lower) != nil })
             collection.reloadData()
         }
     }

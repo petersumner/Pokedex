@@ -16,35 +16,46 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var typeLbl: UILabel!
     @IBOutlet weak var pokedexLbl: UILabel!
-    @IBOutlet weak var heightLbl: UILabel!
-    @IBOutlet weak var weightLbl: UILabel!
     @IBOutlet weak var hpLbl: UILabel!
     @IBOutlet weak var attackLbl: UILabel!
     @IBOutlet weak var defenseLbl: UILabel!
     @IBOutlet weak var spatkLbl: UILabel!
     @IBOutlet weak var spdefLbl: UILabel!
     @IBOutlet weak var speedLbl: UILabel!
-    @IBOutlet weak var prevEvoImg: UIImageView!
-    @IBOutlet weak var nextEvoImg: UIImageView!
-    @IBOutlet weak var evoLbl: UILabel!
     @IBOutlet weak var header: UIView!
     @IBOutlet weak var segmentHeader: UISegmentedControl!
     @IBOutlet weak var typeText: UILabel!
-    @IBOutlet weak var heightText: UILabel!
-    @IBOutlet weak var weightText: UILabel!
     @IBOutlet weak var hpText: UILabel!
     @IBOutlet weak var attacktext: UILabel!
     @IBOutlet weak var defenseText: UILabel!
     @IBOutlet weak var spatkText: UILabel!
     @IBOutlet weak var spdefText: UILabel!
     @IBOutlet weak var speedText: UILabel!
-    @IBOutlet weak var evoBanner: UIView!
     @IBOutlet weak var hpBar: UIProgressView!
     @IBOutlet weak var atkBar: UIProgressView!
     @IBOutlet weak var defBar: UIProgressView!
     @IBOutlet weak var spatkBar: UIProgressView!
     @IBOutlet weak var spdefBar: UIProgressView!
     @IBOutlet weak var spdBar: UIProgressView!
+    
+    @IBOutlet weak var normalLbl: UILabel!
+    @IBOutlet weak var fireLbl: UILabel!
+    @IBOutlet weak var waterLbl: UILabel!
+    @IBOutlet weak var electricLbl: UILabel!
+    @IBOutlet weak var grassLbl: UILabel!
+    @IBOutlet weak var iceLbl: UILabel!
+    @IBOutlet weak var fightingLbl: UILabel!
+    @IBOutlet weak var poisonLbl: UILabel!
+    @IBOutlet weak var groundLbl: UILabel!
+    @IBOutlet weak var flyingLbl: UILabel!
+    @IBOutlet weak var psychicLbl: UILabel!
+    @IBOutlet weak var bugLbl: UILabel!
+    @IBOutlet weak var rockLbl: UILabel!
+    @IBOutlet weak var ghostLbl: UILabel!
+    @IBOutlet weak var dragonLbl: UILabel!
+    @IBOutlet weak var steelLbl: UILabel!
+    @IBOutlet weak var darkLbl: UILabel!
+    @IBOutlet weak var fairyLbl: UILabel!
     
     var colors = [
         "normal" : UIColor(red: 0.66, green: 0.65, blue: 0.48, alpha: 1.00),
@@ -76,8 +87,6 @@ class DetailViewController: UIViewController {
     
     func updateUI() {
         mainImg.image = UIImage(named: "\(pokemon.pokedexID)")
-        prevEvoImg.image = UIImage(named: "\(pokemon.pokedexID-1)")
-        nextEvoImg.image = UIImage(named: "\(pokemon.pokedexID+1)")
         nameLbl.text = pokemon.name
         if pokemon.pokedexID < 10 {
             pokedexLbl.text = "#00\(pokemon.pokedexID)"
@@ -86,8 +95,6 @@ class DetailViewController: UIViewController {
         } else {
             pokedexLbl.text = "#\(pokemon.pokedexID)"
         }
-        heightLbl.text = "\(pokemon.height) m"
-        weightLbl.text = "\(pokemon.weight) kg"
         hpLbl.text = "\(pokemon.stats[0])"
         attackLbl.text = "\(pokemon.stats[1])"
         defenseLbl.text = "\(pokemon.stats[2])"
@@ -99,18 +106,16 @@ class DetailViewController: UIViewController {
         } else {
             typeLbl.text = "\(pokemon.types[0].capitalized)"
         }
+
         header.backgroundColor = colors[pokemon.types[0]]
         segmentHeader.selectedSegmentTintColor = colors[pokemon.types[0]]
         typeText.textColor = colors[pokemon.types[0]]
-        heightText.textColor = colors[pokemon.types[0]]
-        weightText.textColor = colors[pokemon.types[0]]
         hpText.textColor = colors[pokemon.types[0]]
         attacktext.textColor = colors[pokemon.types[0]]
         defenseText.textColor = colors[pokemon.types[0]]
         spatkText.textColor = colors[pokemon.types[0]]
         spdefText.textColor = colors[pokemon.types[0]]
         speedText.textColor = colors[pokemon.types[0]]
-        evoBanner.backgroundColor = colors[pokemon.types[0]]
         
         hpBar.progressTintColor = colors[pokemon.types[0]]
         atkBar.progressTintColor = colors[pokemon.types[0]]
@@ -130,6 +135,10 @@ class DetailViewController: UIViewController {
         spatkBar.progress = Float(pokemon.stats[3]) / 255.0
         spdefBar.progress = Float(pokemon.stats[4]) / 255.0
         spdBar.progress = Float(pokemon.stats[5]) / 255.0
+        
+        for type in pokemon.types {
+            
+        }
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
