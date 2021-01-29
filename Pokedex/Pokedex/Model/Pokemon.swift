@@ -20,13 +20,6 @@ class Pokemon {
     var weight = 0.0
     var stats = [Int]()
     var abilities = [String]()
-    var hp = 0
-    var attack = 0
-    var defense = 0
-    var spatk = 0
-    var spdef = 0
-    var speed = 0
-    var evoTxt = 0
     var pokemonURL = ""
     var baseExp = 0
     
@@ -53,6 +46,9 @@ class Pokemon {
                 for slot in types {
                     let type = slot["type"].dictionary!
                     self.types.append((type["name"]?.string!)!)
+                }
+                if self.types.count > 1 && self.types[0] == self.types[1] {
+                    self.types.remove(at: 1)
                 }
                 let stats = json["stats"].array!
                 for slot in stats {

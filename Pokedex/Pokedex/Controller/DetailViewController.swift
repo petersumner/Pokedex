@@ -57,27 +57,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var darkLbl: UILabel!
     @IBOutlet weak var fairyLbl: UILabel!
     
-    var colors = [
-        "normal" : UIColor(red: 0.66, green: 0.65, blue: 0.48, alpha: 1.00),
-        "fire" : UIColor(red: 0.93, green: 0.51, blue: 0.19, alpha: 1.00),
-        "water" : UIColor(red: 0.39, green: 0.56, blue: 0.94, alpha: 1.00),
-        "electric" : UIColor(red: 0.97, green: 0.82, blue: 0.17, alpha: 1.00),
-        "grass" : UIColor(red: 0.48, green: 0.78, blue: 0.30, alpha: 1.00),
-        "ice" : UIColor(red: 0.59, green: 0.85, blue: 0.84, alpha: 1.00),
-        "fighting" : UIColor(red: 0.76, green: 0.18, blue: 0.16, alpha: 1.00),
-        "poison" : UIColor(red: 0.64, green: 0.24, blue: 0.63, alpha: 1.00),
-        "ground" : UIColor(red: 0.89, green: 0.75, blue: 0.40, alpha: 1.00),
-        "flying" : UIColor(red: 0.66, green: 0.56, blue: 0.95, alpha: 1.00),
-        "psychic" : UIColor(red: 0.98, green: 0.33, blue: 0.53, alpha: 1.00),
-        "bug" : UIColor(red: 0.65, green: 0.73, blue: 0.10, alpha: 1.00),
-        "rock" : UIColor(red: 0.71, green: 0.63, blue: 0.21, alpha: 1.00),
-        "ghost" : UIColor(red: 0.45, green: 0.34, blue: 0.59, alpha: 1.00),
-        "dragon" : UIColor(red: 0.44, green: 0.21, blue: 0.99, alpha: 1.00),
-        "dark" : UIColor(red: 0.44, green: 0.34, blue: 0.27, alpha: 1.00),
-        "steel" : UIColor(red: 0.72, green: 0.72, blue: 0.81, alpha: 1.00),
-        "fairy" : UIColor(red: 0.84, green: 0.52, blue: 0.68, alpha: 1.00)
-    ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         pokemon.downloadPokemonDetail{
@@ -87,6 +66,11 @@ class DetailViewController: UIViewController {
     
     func updateUI() {
         mainImg.image = UIImage(named: "\(pokemon.pokedexID)")
+        let screenSize: CGRect = UIScreen.main.bounds
+        let bgImg = UIImageView(image: UIImage(named: "\(pokemon.types[0])BG"))
+        bgImg.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.bounds.size.height / 2 - 20)
+        bgImg.transform = CGAffineTransform(scaleX: screenSize.width / 700, y: screenSize.height / 1200)
+        self.view.insertSubview(bgImg, at: 0)
         nameLbl.text = pokemon.name
         if pokemon.pokedexID < 10 {
             pokedexLbl.text = "#00\(pokemon.pokedexID)"
@@ -106,7 +90,7 @@ class DetailViewController: UIViewController {
         } else {
             typeLbl.text = "\(pokemon.types[0].capitalized)"
         }
-
+        
         header.backgroundColor = colors[pokemon.types[0]]
         segmentHeader.selectedSegmentTintColor = colors[pokemon.types[0]]
         typeText.textColor = colors[pokemon.types[0]]
@@ -123,12 +107,12 @@ class DetailViewController: UIViewController {
         spatkBar.progressTintColor = colors[pokemon.types[0]]
         spdefBar.progressTintColor = colors[pokemon.types[0]]
         spdBar.progressTintColor = colors[pokemon.types[0]]
-        hpBar.layer.cornerRadius = 12
-        atkBar.layer.cornerRadius = 12
-        defBar.layer.cornerRadius = 12
-        spatkBar.layer.cornerRadius = 12
-        spdefBar.layer.cornerRadius = 12
-        spdBar.layer.cornerRadius = 12
+        hpBar.layer.cornerRadius = 7
+        atkBar.layer.cornerRadius = 7
+        defBar.layer.cornerRadius = 7
+        spatkBar.layer.cornerRadius = 7
+        spdefBar.layer.cornerRadius = 7
+        spdBar.layer.cornerRadius = 7
         hpBar.progress = Float(pokemon.stats[0]) / 255.0
         atkBar.progress = Float(pokemon.stats[1]) / 255.0
         defBar.progress = Float(pokemon.stats[2]) / 255.0
@@ -136,9 +120,8 @@ class DetailViewController: UIViewController {
         spdefBar.progress = Float(pokemon.stats[4]) / 255.0
         spdBar.progress = Float(pokemon.stats[5]) / 255.0
         
-        for type in pokemon.types {
-            
-        }
+        
+        
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
