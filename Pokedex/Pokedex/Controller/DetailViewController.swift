@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var pokemon: Pokemon!
+    var labels: [UILabel]!
     
     @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
@@ -59,6 +60,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        labels = [normalLbl, fightingLbl, flyingLbl, poisonLbl, groundLbl, rockLbl, bugLbl, ghostLbl, steelLbl, fireLbl, waterLbl, grassLbl, electricLbl, psychicLbl, iceLbl, dragonLbl, darkLbl, fairyLbl]
         pokemon.downloadPokemonDetail{
             self.updateUI()
         }
@@ -120,7 +122,12 @@ class DetailViewController: UIViewController {
         spdefBar.progress = Float(pokemon.stats[4]) / 255.0
         spdBar.progress = Float(pokemon.stats[5]) / 255.0
         
+        for slot in pokemon.types {
+        }
         
+    }
+    
+    func typeEffectiveness (type: UILabel) {
         
     }
     

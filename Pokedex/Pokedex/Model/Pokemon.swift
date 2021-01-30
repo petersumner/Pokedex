@@ -22,6 +22,9 @@ class Pokemon {
     var abilities = [String]()
     var pokemonURL = ""
     var baseExp = 0
+    var weak = [String]()
+    var resist = [String]()
+    var immune = [String]()
     
     init(name: String, pokedexID: Int) {
         self.name = name.capitalized
