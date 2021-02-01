@@ -11,7 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var pokemon: Pokemon!
-    var labels: [UILabel]!
+    var labels: [String: UILabel]!
     
     @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
@@ -60,7 +60,9 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        labels = [normalLbl, fightingLbl, flyingLbl, poisonLbl, groundLbl, rockLbl, bugLbl, ghostLbl, steelLbl, fireLbl, waterLbl, grassLbl, electricLbl, psychicLbl, iceLbl, dragonLbl, darkLbl, fairyLbl]
+        
+        labels = ["normal" : normalLbl, "fighting" : fightingLbl, "flying" : flyingLbl, "poison" : poisonLbl, "ground" : groundLbl, "rock" : rockLbl, "bug" : bugLbl, "ghost" : ghostLbl, "steel" : steelLbl, "fire" : fireLbl, "water" : waterLbl, "grass" : grassLbl, "electric" : electricLbl, "psychic" : psychicLbl, "ice" : iceLbl, "dragon" : dragonLbl, "dark" : darkLbl, "fairy" : fairyLbl]
+        
         pokemon.downloadPokemonDetail{
             self.updateUI()
         }
@@ -102,7 +104,7 @@ class DetailViewController: UIViewController {
         spatkText.textColor = colors[pokemon.types[0]]
         spdefText.textColor = colors[pokemon.types[0]]
         speedText.textColor = colors[pokemon.types[0]]
-        
+                
         hpBar.progressTintColor = colors[pokemon.types[0]]
         atkBar.progressTintColor = colors[pokemon.types[0]]
         defBar.progressTintColor = colors[pokemon.types[0]]
@@ -122,7 +124,52 @@ class DetailViewController: UIViewController {
         spdefBar.progress = Float(pokemon.stats[4]) / 255.0
         spdBar.progress = Float(pokemon.stats[5]) / 255.0
         
+        let keys = types.keys
+        
+        for type in labels {
+            type.value.text = "1x"
+        }
+        
         for slot in pokemon.types {
+            let typeData = types[slot]!
+            let weak = typeData["weak"]!
+            let resist = typeData["resist"]!
+            let immune = typeData["immune"]!
+            for type in immune {
+                labels[type]!.text = "0x"
+            }
+            for type in weak {
+                let mult = labels[type]!.text!.dropLast()
+                var x = 1.0
+                if mult == "1/4" {
+                    x = 0.5
+                } else if mult == "1/2" {
+                    x = 1
+                } else {
+                    x = Double(mult)! * 2.0
+                }
+                if x == 0.5 {
+                    labels[type]!.text = "1/2x"
+                } else {
+                    labels[type]!.text = "\(String(describing: Int(x)))x"
+                }
+            }
+            for type in resist {
+                let mult = labels[type]!.text!.dropLast()
+                var x = 1.0
+                if mult == "1/2" {
+                    x = 0.25
+                } else {
+                    x = Double(mult)! / 2.0
+                }
+                if x == 0.25 {
+                    labels[type]!.text = "1/4x"
+                } else if x == 0.5 {
+                    labels[type]!.text = "1/2x"
+                } else {
+                    labels[type]!.text = "\(String(describing: Int(x)))x"
+                }
+            }
         }
         
     }
