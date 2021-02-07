@@ -124,8 +124,6 @@ class DetailViewController: UIViewController {
         spdefBar.progress = Float(pokemon.stats[4]) / 255.0
         spdBar.progress = Float(pokemon.stats[5]) / 255.0
         
-        let keys = types.keys
-        
         for type in labels {
             type.value.text = "1x"
         }

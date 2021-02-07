@@ -106,6 +106,7 @@
                             <constraint firstAttribute="trailing" secondItem="Juj-WL-IDA" secondAttribute="trailing" constant="20" id="m3x-qH-LjD"/>
                             <constraint firstItem="Caf-oJ-cbn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xIH-mK-FhY"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="YFy-Al-WgG"/>
                     </view>
                     <connections>
                         <outlet property="collection" destination="Juj-WL-IDA" id="TxM-oa-h0Z"/>
@@ -667,7 +668,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XIv-47-yh3">
                                                         <rect key="frame" x="0.0" y="42" width="92" height="32"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icd" translatesAutoresizingMaskIntoConstraints="NO" id="fMU-oy-UoY">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ice" translatesAutoresizingMaskIntoConstraints="NO" id="fMU-oy-UoY">
                                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="32" id="9Nz-Sz-76o"/>
@@ -779,6 +780,7 @@
                             <constraint firstItem="EHN-NC-bFT" firstAttribute="top" secondItem="VvW-DB-ic1" secondAttribute="top" id="vdP-L6-DWa"/>
                             <constraint firstItem="9Me-jE-NzV" firstAttribute="leading" secondItem="VvW-DB-ic1" secondAttribute="leading" constant="8" id="xRo-7R-wXT"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="VFe-s3-E5w"/>
                     </view>
                     <navigationItem key="navigationItem" id="6Vh-yB-xKF"/>
                     <connections>
@@ -846,7 +848,7 @@
         <image name="ghost" width="64" height="64"/>
         <image name="grass" width="64" height="64"/>
         <image name="ground" width="64" height="64"/>
-        <image name="icd" width="64" height="64"/>
+        <image name="ice" width="64" height="64"/>
         <image name="normal" width="64" height="64"/>
         <image name="poison" width="64" height="64"/>
         <image name="psychic" width="64" height="64"/>
