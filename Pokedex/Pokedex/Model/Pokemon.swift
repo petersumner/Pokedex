@@ -48,7 +48,9 @@ class Pokemon {
                 let types = json["types"].array!
                 for slot in types {
                     let type = slot["type"].dictionary!
-                    self.types.append((type["name"]?.string!)!)
+                    if !self.types.contains((type["name"]?.string!)!) {
+                        self.types.append((type["name"]?.string!)!)
+                    }
                 }
                 if self.types.count > 1 && self.types[0] == self.types[1] {
                     self.types.remove(at: 1)

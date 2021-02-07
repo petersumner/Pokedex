@@ -157,7 +157,11 @@ class DetailViewController: UIViewController {
                 var x = 1.0
                 if mult == "1/2" {
                     x = 0.25
+                } else if mult == "1/4" {
+                    x = 0.25
                 } else {
+                    print(pokemon.types)
+                    print(mult, type)
                     x = Double(mult)! / 2.0
                 }
                 if x == 0.25 {
