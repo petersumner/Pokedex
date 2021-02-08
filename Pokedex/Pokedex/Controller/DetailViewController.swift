@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var pokemon: Pokemon!
     var labels: [String: UILabel]!
@@ -57,6 +57,29 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var steelLbl: UILabel!
     @IBOutlet weak var darkLbl: UILabel!
     @IBOutlet weak var fairyLbl: UILabel!
+    
+    @IBOutlet weak var segmentView: UIStackView!
+    @IBOutlet weak var typeView: UIView!
+    @IBOutlet weak var statView: UIView!
+    @IBOutlet weak var moveView: UICollectionView!
+    
+    @IBAction func segmentDidChange(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            statView.isHidden = false
+            typeView.isHidden = false
+            moveView.isHidden = true
+            break
+        case 1:
+            statView.isHidden = true
+            typeView.isHidden = false
+            moveView.isHidden = false
+            break
+        default:
+            break
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -176,8 +199,20 @@ class DetailViewController: UIViewController {
         
     }
     
-    func typeEffectiveness (type: UILabel) {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoveCell", for: indexPath) as? MoveCell {
+            
+            
+            
+            return cell
+        } else {
+            return UICollectionViewCell()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return pokemon.moves.count
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
