@@ -41,17 +41,18 @@ class Pokemon {
                 self.weight = json["weight"].double! / 10
                 self.height = json["height"].double! / 10
                 self.baseExp = json["base_experience"].int!
+                
+                self.abilities = []
                 let abilities = json["abilities"].array!
                 for slot in abilities {
                     let ability = slot["ability"].dictionary!
-                    self.abilities.append((ability["name"]?.string!)!)
+                    self.abilities.append((ability["name"]?.string!.capitalized)!)
                 }
+                self.types = []
                 let types = json["types"].array!
                 for slot in types {
                     let type = slot["type"].dictionary!
-                    if !self.types.contains((type["name"]?.string!)!) {
-                        self.types.append((type["name"]?.string!)!)
-                    }
+                    self.types.append((type["name"]?.string!.capitalized)!)
                 }
                 if self.types.count > 1 && self.types[0] == self.types[1] {
                     self.types.remove(at: 1)
@@ -59,6 +60,14 @@ class Pokemon {
                 let stats = json["stats"].array!
                 for slot in stats {
                     self.stats.append(slot["base_stat"].int!)
+                }
+                let moves = json["moves"].array!
+                for slot in moves{
+                    let moveData = slot["move"].dictionary!
+                    let moveName = moveData["name"]?.string
+                    let moveURL = moveData["url"]?.string
+                    let move = Move(name: moveName!, url: moveURL!)
+                    self.moves.append(move)
                 }
             } catch {
                 print(error)

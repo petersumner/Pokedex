@@ -17,6 +17,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var typeLbl: UILabel!
     @IBOutlet weak var pokedexLbl: UILabel!
+    @IBOutlet weak var abilityLbl: UILabel!
     @IBOutlet weak var hpLbl: UILabel!
     @IBOutlet weak var attackLbl: UILabel!
     @IBOutlet weak var defenseLbl: UILabel!
@@ -26,6 +27,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var header: UIView!
     @IBOutlet weak var segmentHeader: UISegmentedControl!
     @IBOutlet weak var typeText: UILabel!
+    @IBOutlet weak var abilityText: UILabel!
     @IBOutlet weak var hpText: UILabel!
     @IBOutlet weak var attacktext: UILabel!
     @IBOutlet weak var defenseText: UILabel!
@@ -94,11 +96,12 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     func updateUI() {
         mainImg.image = UIImage(named: "\(pokemon.pokedexID)")
         let screenSize: CGRect = UIScreen.main.bounds
-        let bgImg = UIImageView(image: UIImage(named: "\(pokemon.types[0])BG"))
+        let bgImg = UIImageView(image: UIImage(named: "\(pokemon.types[0].lowercased())BG"))
         bgImg.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.bounds.size.height / 2 - 20)
         bgImg.transform = CGAffineTransform(scaleX: screenSize.width / 700, y: screenSize.height / 1200)
         self.view.insertSubview(bgImg, at: 0)
         nameLbl.text = pokemon.name
+        
         if pokemon.pokedexID < 10 {
             pokedexLbl.text = "#00\(pokemon.pokedexID)"
         } else if pokemon.pokedexID < 100 {
@@ -106,34 +109,35 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         } else {
             pokedexLbl.text = "#\(pokemon.pokedexID)"
         }
+        
+        abilityText.textColor = colors[pokemon.types[0].lowercased()]
+        abilityLbl.text = pokemon.abilities.joined(separator: ", ")
+        
         hpLbl.text = "\(pokemon.stats[0])"
         attackLbl.text = "\(pokemon.stats[1])"
         defenseLbl.text = "\(pokemon.stats[2])"
         spatkLbl.text = "\(pokemon.stats[3])"
         spdefLbl.text = "\(pokemon.stats[4])"
         speedLbl.text = "\(pokemon.stats[5])"
-        if pokemon.types.count > 1 {
-            typeLbl.text = "\(pokemon.types[0].capitalized) / \(pokemon.types[1].capitalized)"
-        } else {
-            typeLbl.text = "\(pokemon.types[0].capitalized)"
-        }
+        
+        typeLbl.text = pokemon.types.joined(separator: " / ")
         
         header.backgroundColor = colors[pokemon.types[0]]
         segmentHeader.selectedSegmentTintColor = colors[pokemon.types[0]]
-        typeText.textColor = colors[pokemon.types[0]]
-        hpText.textColor = colors[pokemon.types[0]]
-        attacktext.textColor = colors[pokemon.types[0]]
-        defenseText.textColor = colors[pokemon.types[0]]
-        spatkText.textColor = colors[pokemon.types[0]]
-        spdefText.textColor = colors[pokemon.types[0]]
-        speedText.textColor = colors[pokemon.types[0]]
+        typeText.textColor = colors[pokemon.types[0].lowercased()]
+        hpText.textColor = colors[pokemon.types[0].lowercased()]
+        attacktext.textColor = colors[pokemon.types[0].lowercased()]
+        defenseText.textColor = colors[pokemon.types[0].lowercased()]
+        spatkText.textColor = colors[pokemon.types[0].lowercased()]
+        spdefText.textColor = colors[pokemon.types[0].lowercased()]
+        speedText.textColor = colors[pokemon.types[0].lowercased()]
                 
-        hpBar.progressTintColor = colors[pokemon.types[0]]
-        atkBar.progressTintColor = colors[pokemon.types[0]]
-        defBar.progressTintColor = colors[pokemon.types[0]]
-        spatkBar.progressTintColor = colors[pokemon.types[0]]
-        spdefBar.progressTintColor = colors[pokemon.types[0]]
-        spdBar.progressTintColor = colors[pokemon.types[0]]
+        hpBar.progressTintColor = colors[pokemon.types[0].lowercased()]
+        atkBar.progressTintColor = colors[pokemon.types[0].lowercased()]
+        defBar.progressTintColor = colors[pokemon.types[0].lowercased()]
+        spatkBar.progressTintColor = colors[pokemon.types[0].lowercased()]
+        spdefBar.progressTintColor = colors[pokemon.types[0].lowercased()]
+        spdBar.progressTintColor = colors[pokemon.types[0].lowercased()]
         hpBar.layer.cornerRadius = 7
         atkBar.layer.cornerRadius = 7
         defBar.layer.cornerRadius = 7
@@ -150,9 +154,9 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         for type in labels {
             type.value.text = "1x"
         }
-        
+                
         for slot in pokemon.types {
-            let typeData = types[slot]!
+            let typeData = types[slot.lowercased()]!
             let weak = typeData["weak"]!
             let resist = typeData["resist"]!
             let immune = typeData["immune"]!
@@ -183,8 +187,6 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
                 } else if mult == "1/4" {
                     x = 0.25
                 } else {
-                    print(pokemon.types)
-                    print(mult, type)
                     x = Double(mult)! / 2.0
                 }
                 if x == 0.25 {
@@ -196,6 +198,9 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
                 }
             }
         }
+    }
+    
+    func updateMoves() {
         
     }
     

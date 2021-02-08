@@ -16,13 +16,10 @@ class Move {
     var power = 0
     var accuracy = 0
     var pp = 0
+    var url = ""
     
-    init(name: String, type: String, category: String, power: Int, accuracy: Int, pp: Int) {
+    init(name: String, url: String) {
         self.name = name.capitalized
-        self.type = type
-        self.category = category
-        self.power = power
-        self.accuracy = accuracy
-        self.pp = pp
+        self.url = url
     }
 }
