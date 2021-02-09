@@ -12,19 +12,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="tyK-xz-yvp">
             <objects>
-                <viewController id="gS1-4t-YuX" sceneMemberID="viewController">
+                <viewController id="gS1-4t-YuX" customClass="SearchViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Ix-Rf-9Pk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9T-MR-oFR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SM-49-SDR">
-                                        <rect key="frame" x="122" y="20" width="131" height="34"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advanced Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SM-49-SDR">
+                                        <rect key="frame" x="112.5" y="20" width="150" height="34"/>
                                         <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -39,6 +39,11 @@
                                         <state key="normal">
                                             <imageReference key="image" image="arrow.left.circle" catalog="system" symbolScale="large"/>
                                         </state>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="gS1-4t-YuX" eventType="touchUpInside" id="Es0-fB-xL0"/>
+                                            <action selector="backBtnPressed:" destination="bHa-Pj-ncJ" eventType="touchUpInside" id="ga5-bk-rAc"/>
+                                            <action selector="exitBtnPressed:" destination="bHa-Pj-ncJ" eventType="touchUpInside" id="nSI-b8-qbR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,10 +64,12 @@
                             <constraint firstItem="h9T-MR-oFR" firstAttribute="trailing" secondItem="I8e-D5-vef" secondAttribute="trailing" id="b3t-Lj-qZL"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="OqO-rS-GGn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCO-5G-0xP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bHa-Pj-ncJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-938.39999999999998" y="111.99400299850076"/>
+            <point key="canvasLocation" x="-42" y="866"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -147,6 +154,10 @@
                                         <state key="normal">
                                             <imageReference key="image" image="text.magnifyingglass" catalog="system" symbolScale="large"/>
                                         </state>
+                                        <connections>
+                                            <action selector="filterBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IJ1-Uy-Hxu"/>
+                                            <segue destination="gS1-4t-YuX" kind="show" id="CvD-6R-TCD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -180,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7.2000000000000002" y="111.99400299850076"/>
+            <point key="canvasLocation" x="-42" y="112"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="4ap-pE-cHV">

@@ -150,5 +150,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
+    @IBAction func filterBtnPressed(_ sender: UIButton) {
+        
+    }
+    
 }
 
