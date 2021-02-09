@@ -10,5 +10,6 @@ Current version includes<br>
 
 Working on <br>
 - Moves<br>
+- Advanced Search<br>
 - Alternate sprites (shiny + regional forms)<br>
 - Gen 7 + 8 <br>
