@@ -20,6 +20,7 @@ class Pokemon {
     var weight = 0.0
     var stats = [Int]()
     var abilities = [String]()
+    var hidden = ""
     var pokemonURL = ""
     var baseExp = 0
     var weak = [String]()
@@ -46,7 +47,13 @@ class Pokemon {
                 let abilities = json["abilities"].array!
                 for slot in abilities {
                     let ability = slot["ability"].dictionary!
-                    self.abilities.append((ability["name"]?.string!.capitalized)!)
+                    let isHidden = slot["is_hidden"]
+                    print(isHidden)
+                    if isHidden == true {
+                        self.hidden = (ability["name"]?.string!.capitalized.replacingOccurrences(of: "-", with: " "))!
+                    } else {
+                        self.abilities.append((ability["name"]?.string!.capitalized.replacingOccurrences(of: "-", with: " "))!)
+                    }
                 }
                 self.types = []
                 let types = json["types"].array!

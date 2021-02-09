@@ -18,6 +18,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var typeLbl: UILabel!
     @IBOutlet weak var pokedexLbl: UILabel!
     @IBOutlet weak var abilityLbl: UILabel!
+    @IBOutlet weak var hiddenLbl: UILabel!
     @IBOutlet weak var hpLbl: UILabel!
     @IBOutlet weak var attackLbl: UILabel!
     @IBOutlet weak var defenseLbl: UILabel!
@@ -28,6 +29,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var segmentHeader: UISegmentedControl!
     @IBOutlet weak var typeText: UILabel!
     @IBOutlet weak var abilityText: UILabel!
+    @IBOutlet weak var hiddenText: UILabel!
     @IBOutlet weak var hpText: UILabel!
     @IBOutlet weak var attacktext: UILabel!
     @IBOutlet weak var defenseText: UILabel!
@@ -60,7 +62,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var darkLbl: UILabel!
     @IBOutlet weak var fairyLbl: UILabel!
     
-    @IBOutlet weak var segmentView: UIStackView!
+    @IBOutlet weak var hiddenView: UIStackView!
     @IBOutlet weak var typeView: UIView!
     @IBOutlet weak var statView: UIView!
     @IBOutlet weak var moveView: UICollectionView!
@@ -70,12 +72,10 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         case 0:
             statView.isHidden = false
             typeView.isHidden = false
-            moveView.isHidden = true
             break
         case 1:
             statView.isHidden = true
             typeView.isHidden = false
-            moveView.isHidden = false
             break
         default:
             break
@@ -88,7 +88,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         labels = ["normal" : normalLbl, "fighting" : fightingLbl, "flying" : flyingLbl, "poison" : poisonLbl, "ground" : groundLbl, "rock" : rockLbl, "bug" : bugLbl, "ghost" : ghostLbl, "steel" : steelLbl, "fire" : fireLbl, "water" : waterLbl, "grass" : grassLbl, "electric" : electricLbl, "psychic" : psychicLbl, "ice" : iceLbl, "dragon" : dragonLbl, "dark" : darkLbl, "fairy" : fairyLbl]
         
-        pokemon.downloadPokemonDetail{
+        pokemon.downloadPokemonDetail { 
             self.updateUI()
         }
     }
@@ -112,6 +112,13 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         abilityText.textColor = colors[pokemon.types[0].lowercased()]
         abilityLbl.text = pokemon.abilities.joined(separator: ", ")
+        
+        if pokemon.hidden == "" {
+            hiddenView.isHidden = true
+        } else {
+            hiddenText.textColor = colors[pokemon.types[0].lowercased()]
+            hiddenLbl.text = pokemon.hidden
+        }
         
         hpLbl.text = "\(pokemon.stats[0])"
         attackLbl.text = "\(pokemon.stats[1])"
