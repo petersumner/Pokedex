@@ -37,7 +37,7 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
-                                            <imageReference key="image" image="arrow.left.circle" catalog="system" symbolScale="large"/>
+                                            <imageReference key="image" image="chevron.backward.circle.fill" catalog="system" symbolScale="large"/>
                                         </state>
                                         <connections>
                                             <action selector="backBtnPressed:" destination="gS1-4t-YuX" eventType="touchUpInside" id="Es0-fB-xL0"/>
@@ -70,6 +70,64 @@
                 <exit id="bHa-Pj-ncJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-42" y="866"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="xxN-2u-9g3">
+            <objects>
+                <viewController id="rOm-ha-KFh" customClass="SettingsViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dN5-Py-pYN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVd-nD-3hx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kA-IK-0lx">
+                                        <rect key="frame" x="151" y="20.5" width="73.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdY-Ri-jbM">
+                                        <rect key="frame" x="8" y="20" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="RaW-2s-IRX"/>
+                                            <constraint firstAttribute="width" constant="32" id="otV-sG-Lu2"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="chevron.backward.circle.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="m1l-8L-n45" eventType="touchUpInside" id="3Zb-70-yrT"/>
+                                            <action selector="backBtnPressed:" destination="rOm-ha-KFh" eventType="touchUpInside" id="oWG-YE-viq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="8kA-IK-0lx" secondAttribute="bottom" constant="6" id="EM5-Z7-7ES"/>
+                                    <constraint firstItem="MdY-Ri-jbM" firstAttribute="leading" secondItem="OVd-nD-3hx" secondAttribute="leading" constant="8" id="SfA-ia-FBH"/>
+                                    <constraint firstItem="8kA-IK-0lx" firstAttribute="centerX" secondItem="OVd-nD-3hx" secondAttribute="centerX" id="W64-lt-37N"/>
+                                    <constraint firstAttribute="bottom" secondItem="MdY-Ri-jbM" secondAttribute="bottom" constant="8" id="b53-Xk-ZMA"/>
+                                    <constraint firstAttribute="height" constant="60" id="cU4-mB-iwu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="D7X-LW-zCW"/>
+                        <color key="backgroundColor" red="0.12129447610000001" green="0.12922456860000001" blue="0.14169979099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OVd-nD-3hx" firstAttribute="top" secondItem="D7X-LW-zCW" secondAttribute="top" id="YL4-3X-Fx6"/>
+                            <constraint firstItem="OVd-nD-3hx" firstAttribute="leading" secondItem="D7X-LW-zCW" secondAttribute="leading" id="bNs-e1-sHM"/>
+                            <constraint firstItem="D7X-LW-zCW" firstAttribute="trailing" secondItem="OVd-nD-3hx" secondAttribute="trailing" id="h9k-u2-hLn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9Yg-jo-Nqe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JvM-6O-FLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="m1l-8L-n45" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="826" y="-607"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -148,7 +206,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpA-dU-yNg">
-                                        <rect key="frame" x="335" y="20" width="32" height="32"/>
+                                        <rect key="frame" x="8" y="20" width="32" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
@@ -159,11 +217,27 @@
                                             <segue destination="gS1-4t-YuX" kind="show" id="CvD-6R-TCD"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ShP-Ld-2gd">
+                                        <rect key="frame" x="335" y="20" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="0fZ-e0-PQh"/>
+                                            <constraint firstAttribute="width" constant="32" id="MqQ-VP-Qgm"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="gearshape.fill" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="rOm-ha-KFh" kind="show" id="V2S-jt-0fI"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ShP-Ld-2gd" secondAttribute="trailing" constant="8" id="Dc6-ae-4fm"/>
                                     <constraint firstItem="MPL-Yk-gvG" firstAttribute="centerX" secondItem="Caf-oJ-cbn" secondAttribute="centerX" id="Hcg-HA-P8O"/>
                                     <constraint firstAttribute="bottom" secondItem="MPL-Yk-gvG" secondAttribute="bottom" constant="6" id="Set-cN-Sie"/>
+                                    <constraint firstAttribute="bottom" secondItem="ShP-Ld-2gd" secondAttribute="bottom" constant="8" id="WSV-nz-PSW"/>
                                     <constraint firstAttribute="height" constant="60" id="jFf-gb-hV0"/>
                                 </constraints>
                             </view>
@@ -191,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42" y="112"/>
+            <point key="canvasLocation" x="-42.399999999999999" y="111.99400299850076"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="4ap-pE-cHV">
@@ -402,7 +476,7 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
-                                            <imageReference key="image" image="arrow.left.circle" catalog="system" symbolScale="large"/>
+                                            <imageReference key="image" image="chevron.backward.circle.fill" catalog="system" symbolScale="large"/>
                                         </state>
                                         <connections>
                                             <action selector="backBtnPressed:" destination="C8h-k1-Hmt" eventType="touchUpInside" id="PFw-mG-Zxb"/>
@@ -1096,8 +1170,8 @@
     </scenes>
     <resources>
         <image name="4" width="120" height="120"/>
-        <image name="arrow.left.circle" catalog="system" width="128" height="121"/>
         <image name="bug" width="64" height="64"/>
+        <image name="chevron.backward.circle.fill" catalog="system" width="128" height="121"/>
         <image name="dark" width="64" height="64"/>
         <image name="dragon" width="64" height="64"/>
         <image name="electric" width="64" height="64"/>
@@ -1105,6 +1179,7 @@
         <image name="fighting" width="64" height="64"/>
         <image name="fire" width="64" height="64"/>
         <image name="flying" width="64" height="64"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="ghost" width="64" height="64"/>
         <image name="grass" width="64" height="64"/>
         <image name="ground" width="64" height="64"/>
