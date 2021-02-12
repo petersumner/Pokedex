@@ -150,6 +150,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
+    @IBAction func settingsBtnPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToSettings", sender: self)
+    }
     @IBAction func filterBtnPressed(_ sender: UIButton) {
         
     }
