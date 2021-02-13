@@ -13,6 +13,8 @@ let URL_BASE = "http://pokeapi.co"
 let URL_POKEMON = "/api/v2/pokemon/"
 let URL_TYPE = "/api/v2/type/"
 
+let defaults = UserDefaults.standard
+
 let colors = [
     "normal" : UIColor(red: 0.66, green: 0.65, blue: 0.48, alpha: 1.00),
     "fighting" : UIColor(red: 0.76, green: 0.18, blue: 0.16, alpha: 1.00),

@@ -28,6 +28,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         parsePokemonCSV()
         
+        defaults.set("Default", forKey: "Theme")
+        
     }
 
     func parsePokemonCSV() {

@@ -26,6 +26,11 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         themeTableView.dataSource = self
         self.themeTableView.isHidden = true
         
+        loadSavedSettings()
+    }
+    
+    func loadSavedSettings() {
+        self.themeButton.setTitle(defaults.string(forKey: "Theme"), for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +54,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         themeButton.setTitle(cell?.textLabel?.text, for: .normal)
+        defaults.setValue(cell?.textLabel?.text, forKey: "Theme")
         self.themeTableView.isHidden = true
     }
     
