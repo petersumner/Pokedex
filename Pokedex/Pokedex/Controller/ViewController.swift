@@ -12,6 +12,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var header: UIView!
     
     var pokemon = [Pokemon]()
     var filteredPokemon = [Pokemon]()
@@ -61,7 +62,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         UIGraphicsEndImageContext()
         
         self.view.backgroundColor = UIColor(patternImage: bgImg)
-        
+        header.backgroundColor = colors["\(bgName)ThemeDark"]
         
     }
 

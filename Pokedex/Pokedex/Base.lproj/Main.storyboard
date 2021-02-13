@@ -360,6 +360,7 @@
                     </view>
                     <connections>
                         <outlet property="collection" destination="Juj-WL-IDA" id="TxM-oa-h0Z"/>
+                        <outlet property="header" destination="Caf-oJ-cbn" id="OrW-4H-Xjh"/>
                         <outlet property="searchBar" destination="WfS-Ey-5vR" id="0JM-3R-lVB"/>
                         <segue destination="C8h-k1-Hmt" kind="show" identifier="DetailViewController" id="KcV-dV-Shm"/>
                         <segue destination="rOm-ha-KFh" kind="presentation" identifier="goToSettings" modalPresentationStyle="fullScreen" id="egV-TJ-NKu"/>
