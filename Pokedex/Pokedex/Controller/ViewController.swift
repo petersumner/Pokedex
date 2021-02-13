@@ -62,8 +62,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         UIGraphicsEndImageContext()
         
         self.view.backgroundColor = UIColor(patternImage: bgImg)
-        header.backgroundColor = colors["\(bgName)ThemeDark"]
-        
+        let theme = defaults.string(forKey: "Theme")
+        header.backgroundColor = colors[theme!+"ThemeDark"]
+        collection.reloadData()
     }
 
     func parsePokemonCSV() {
@@ -93,6 +94,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 poke = pokemon[indexPath.row]
                 cell.configureCell(pokemon: poke)
             }
+            let theme = defaults.string(forKey: "Theme")
+            cell.nameLbl.backgroundColor = colors[theme!+"ThemeDark"]
             return cell
         } else {
             return UICollectionViewCell()
