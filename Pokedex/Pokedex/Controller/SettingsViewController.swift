@@ -55,6 +55,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.cellForRow(at: indexPath)
         themeButton.setTitle(cell?.textLabel?.text, for: .normal)
         defaults.setValue(cell?.textLabel?.text, forKey: "Theme")
+        
         self.themeTableView.isHidden = true
     }
     

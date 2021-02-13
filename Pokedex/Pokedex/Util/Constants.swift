@@ -33,7 +33,8 @@ let colors = [
     "ice" : UIColor(red: 0.59, green: 0.85, blue: 0.84, alpha: 1.00),
     "dragon" : UIColor(red: 0.31, green: 0.08, blue: 0.86, alpha: 1.00),
     "dark" : UIColor(red: 0.44, green: 0.34, blue: 0.27, alpha: 1.00),
-    "fairy" : UIColor(red: 0.84, green: 0.52, blue: 0.68, alpha: 1.00)
+    "fairy" : UIColor(red: 0.84, green: 0.52, blue: 0.68, alpha: 1.00),
+    "darkMode" : UIColor(red: 0.12, green: 0.13, blue: 0.14, alpha: 1.00)
 ]
 
 let types = [
