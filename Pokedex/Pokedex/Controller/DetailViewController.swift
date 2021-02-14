@@ -214,9 +214,6 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoveCell", for: indexPath) as? MoveCell {
-            
-            
-            
             return cell
         } else {
             return UICollectionViewCell()

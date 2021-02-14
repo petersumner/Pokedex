@@ -17,10 +17,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var pokemon = [Pokemon]()
     var filteredPokemon = [Pokemon]()
     var inSearchMode = false
-    
-    var bgSubview: UIView!
-    var themeName: String!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
