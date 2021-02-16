@@ -69,7 +69,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCO-5G-0xP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="bHa-Pj-ncJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-42" y="866"/>
+            <point key="canvasLocation" x="-994" y="913"/>
         </scene>
         <!--Moves-->
         <scene sceneID="YG0-tD-jtK">
@@ -90,16 +90,17 @@
                         <color key="backgroundColor" red="0.12129447610000001" green="0.12922456860000001" blue="0.14169979099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Moves" id="267-Xg-hAv"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S5Q-UV-grI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="1575"/>
+            <point key="canvasLocation" x="566" y="1681"/>
         </scene>
         <!--Stats-->
         <scene sceneID="fbo-AH-MP3">
             <objects>
-                <viewController id="YX5-Bi-qxt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="D5r-i9-u2q">
+                <viewController modalPresentationStyle="fullScreen" id="YX5-Bi-qxt" customClass="StatViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="D5r-i9-u2q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -135,6 +136,9 @@
                                         <state key="normal">
                                             <imageReference key="image" image="arrow.backward.circle.fill" catalog="system" symbolScale="large"/>
                                         </state>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="YX5-Bi-qxt" eventType="touchUpInside" id="add-XO-xYU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -755,10 +759,9 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="CL0-qI-7tW"/>
                         <color key="backgroundColor" red="0.12129447610000001" green="0.12922456860000001" blue="0.14169979099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vFW-IH-3Ca" firstAttribute="leading" secondItem="CL0-qI-7tW" secondAttribute="leading" constant="16" id="0DD-Ek-h4q"/>
+                            <constraint firstItem="vFW-IH-3Ca" firstAttribute="leading" secondItem="D5r-i9-u2q" secondAttribute="leading" constant="16" id="0DD-Ek-h4q"/>
                             <constraint firstItem="N5v-gG-Eul" firstAttribute="top" secondItem="qhb-Xu-IhB" secondAttribute="bottom" constant="8" id="0Pz-Me-zDD"/>
                             <constraint firstItem="N1e-Wp-gGz" firstAttribute="top" secondItem="85a-Zp-Hdx" secondAttribute="bottom" id="FsC-tC-D4e"/>
                             <constraint firstItem="l5Y-wc-YUy" firstAttribute="top" secondItem="N5v-gG-Eul" secondAttribute="bottom" constant="8" symbolic="YES" id="GCf-5V-ddb"/>
@@ -766,31 +769,83 @@
                             <constraint firstItem="m4k-Y9-ahp" firstAttribute="leading" secondItem="N5v-gG-Eul" secondAttribute="trailing" constant="8" symbolic="YES" id="Inz-P6-yjF"/>
                             <constraint firstItem="85a-Zp-Hdx" firstAttribute="top" secondItem="P6W-J9-wUT" secondAttribute="bottom" id="JXF-Ln-GrK"/>
                             <constraint firstItem="vFW-IH-3Ca" firstAttribute="top" secondItem="l5Y-wc-YUy" secondAttribute="bottom" constant="15" id="LMu-Li-FEf"/>
-                            <constraint firstItem="qhb-Xu-IhB" firstAttribute="top" secondItem="CL0-qI-7tW" secondAttribute="top" id="MXM-wc-tcc"/>
-                            <constraint firstItem="CL0-qI-7tW" firstAttribute="trailing" secondItem="l5Y-wc-YUy" secondAttribute="trailing" constant="16" id="RzT-Qf-VfM"/>
+                            <constraint firstItem="qhb-Xu-IhB" firstAttribute="top" secondItem="D5r-i9-u2q" secondAttribute="top" id="MXM-wc-tcc"/>
+                            <constraint firstAttribute="trailing" secondItem="l5Y-wc-YUy" secondAttribute="trailing" constant="16" id="RzT-Qf-VfM"/>
                             <constraint firstItem="N1e-Wp-gGz" firstAttribute="leading" secondItem="N5v-gG-Eul" secondAttribute="trailing" constant="8" symbolic="YES" id="TFC-Mf-ibd"/>
                             <constraint firstItem="P6W-J9-wUT" firstAttribute="top" secondItem="qhb-Xu-IhB" secondAttribute="bottom" constant="8" symbolic="YES" id="XOP-06-RbQ"/>
                             <constraint firstItem="85a-Zp-Hdx" firstAttribute="leading" secondItem="N5v-gG-Eul" secondAttribute="trailing" constant="8" symbolic="YES" id="gW1-C6-ogj"/>
-                            <constraint firstItem="N5v-gG-Eul" firstAttribute="leading" secondItem="CL0-qI-7tW" secondAttribute="leading" constant="16" id="kHl-xB-TAm"/>
-                            <constraint firstItem="l5Y-wc-YUy" firstAttribute="leading" secondItem="CL0-qI-7tW" secondAttribute="leading" constant="16" id="ksp-fd-a2P"/>
+                            <constraint firstItem="N5v-gG-Eul" firstAttribute="leading" secondItem="D5r-i9-u2q" secondAttribute="leading" constant="16" id="kHl-xB-TAm"/>
+                            <constraint firstItem="l5Y-wc-YUy" firstAttribute="leading" secondItem="D5r-i9-u2q" secondAttribute="leading" constant="16" id="ksp-fd-a2P"/>
                             <constraint firstItem="P6W-J9-wUT" firstAttribute="leading" secondItem="N5v-gG-Eul" secondAttribute="trailing" constant="8" symbolic="YES" id="n8W-VF-OGH"/>
-                            <constraint firstItem="CL0-qI-7tW" firstAttribute="trailing" secondItem="qhb-Xu-IhB" secondAttribute="trailing" id="nB8-vk-U0b"/>
-                            <constraint firstItem="CL0-qI-7tW" firstAttribute="trailing" secondItem="vFW-IH-3Ca" secondAttribute="trailing" constant="16" id="txp-Bj-nVj"/>
-                            <constraint firstItem="qhb-Xu-IhB" firstAttribute="leading" secondItem="CL0-qI-7tW" secondAttribute="leading" id="ub9-FW-QGj"/>
+                            <constraint firstAttribute="trailing" secondItem="qhb-Xu-IhB" secondAttribute="trailing" id="nB8-vk-U0b"/>
+                            <constraint firstAttribute="trailing" secondItem="vFW-IH-3Ca" secondAttribute="trailing" constant="16" id="txp-Bj-nVj"/>
+                            <constraint firstItem="qhb-Xu-IhB" firstAttribute="leading" secondItem="D5r-i9-u2q" secondAttribute="leading" id="ub9-FW-QGj"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stats" id="NL2-7B-DTz">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="py3-Mc-T0C"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="abilityLbl" destination="8rQ-gf-erD" id="TL7-fe-nVj"/>
+                        <outlet property="abilityText" destination="7qG-z0-p4H" id="yzM-es-IsU"/>
+                        <outlet property="atkBar" destination="HGo-ZG-vN0" id="s5h-Ab-Xdj"/>
+                        <outlet property="attackLbl" destination="V3k-5L-d3I" id="n9o-d6-Kir"/>
+                        <outlet property="attacktext" destination="GAw-pR-hrm" id="569-Wu-Ox3"/>
+                        <outlet property="bugLbl" destination="kn5-fl-AqY" id="psv-Lw-CWl"/>
+                        <outlet property="darkLbl" destination="26a-c3-hOP" id="gaW-Ab-kPX"/>
+                        <outlet property="defBar" destination="Jl1-Yq-rSp" id="iJU-ja-VdY"/>
+                        <outlet property="defenseLbl" destination="Oo3-bm-lZC" id="zuA-Ss-vnf"/>
+                        <outlet property="defenseText" destination="w7q-a0-R0E" id="Y4D-1f-eM0"/>
+                        <outlet property="dragonLbl" destination="mFe-YC-sBz" id="smW-iV-thp"/>
+                        <outlet property="electricLbl" destination="vj6-ih-6dC" id="Iau-y8-3VM"/>
+                        <outlet property="fairyLbl" destination="Gtq-Hg-KAb" id="I1M-Bg-7wg"/>
+                        <outlet property="fightingLbl" destination="oH9-4T-Guv" id="hKe-nc-eRH"/>
+                        <outlet property="fireLbl" destination="XiA-nF-91E" id="mwT-M6-7wS"/>
+                        <outlet property="flyingLbl" destination="ho6-BE-qDe" id="0ln-Kp-aBM"/>
+                        <outlet property="ghostLbl" destination="LRK-LK-q2K" id="aeS-VU-ML0"/>
+                        <outlet property="grassLbl" destination="z0J-JJ-cBc" id="aGd-2u-1ov"/>
+                        <outlet property="groundLbl" destination="wCd-2e-kRn" id="Rr5-hm-PBS"/>
+                        <outlet property="header" destination="qhb-Xu-IhB" id="qHE-uy-ZqR"/>
+                        <outlet property="hiddenLbl" destination="kYn-Fn-voe" id="bW2-l8-M2A"/>
+                        <outlet property="hiddenText" destination="nBt-ge-dbl" id="Qxy-vr-1dQ"/>
+                        <outlet property="hiddenView" destination="N1e-Wp-gGz" id="lqh-UP-dkg"/>
+                        <outlet property="hpBar" destination="hCM-Sp-tdc" id="2zp-Vl-h5p"/>
+                        <outlet property="hpLbl" destination="aK2-y7-Jha" id="dc1-Sa-Eas"/>
+                        <outlet property="hpText" destination="RIJ-r4-JUG" id="IMv-s3-RVa"/>
+                        <outlet property="iceLbl" destination="koe-rR-d6v" id="r43-Z0-XLe"/>
+                        <outlet property="mainImg" destination="N5v-gG-Eul" id="Gj7-df-a5B"/>
+                        <outlet property="nameLbl" destination="pJp-kF-xhz" id="uVe-J3-hie"/>
+                        <outlet property="normalLbl" destination="euL-NB-0hI" id="F0b-UF-uvb"/>
+                        <outlet property="poisonLbl" destination="Bzw-4w-JxW" id="Hi0-K5-HEI"/>
+                        <outlet property="pokedexLbl" destination="Mj5-NR-alJ" id="iRF-8S-N56"/>
+                        <outlet property="psychicLbl" destination="yD7-UI-DnR" id="3Dk-EB-qLj"/>
+                        <outlet property="rockLbl" destination="3tU-Wl-16B" id="Kut-yj-a9r"/>
+                        <outlet property="spatkBar" destination="yFA-AP-Szx" id="7zm-YR-aVB"/>
+                        <outlet property="spatkLbl" destination="hVd-T4-B3n" id="kIS-JZ-eez"/>
+                        <outlet property="spatkText" destination="Z9h-Dq-ng1" id="FFo-6s-BCd"/>
+                        <outlet property="spdBar" destination="IT3-Nd-Gu7" id="tI7-8D-DKf"/>
+                        <outlet property="spdefBar" destination="9Zp-yp-WfG" id="uIY-ki-Z0F"/>
+                        <outlet property="spdefLbl" destination="SWL-w9-vFb" id="HV7-Fq-htx"/>
+                        <outlet property="spdefText" destination="oYT-a4-hkL" id="7Ys-oC-BgO"/>
+                        <outlet property="speedLbl" destination="4c8-Va-zwr" id="7jR-cY-URd"/>
+                        <outlet property="speedText" destination="5h8-mT-wUC" id="qvZ-0g-DKz"/>
+                        <outlet property="steelLbl" destination="D58-JT-6rV" id="g0l-VO-w1N"/>
+                        <outlet property="typeLbl" destination="314-AX-Tte" id="0o9-mj-0Vq"/>
+                        <outlet property="typeText" destination="pzy-H6-ksg" id="wY5-FH-G4g"/>
+                        <outlet property="waterLbl" destination="nkW-F8-HN7" id="gFi-ze-UJ4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0N-Me-QzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="912.5937031484259"/>
+            <point key="canvasLocation" x="566" y="913"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Controller-->
         <scene sceneID="B59-1E-b5u">
             <objects>
-                <tabBarController id="7Bc-Y5-Avu" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="7Bc-Y5-Avu" customClass="TabController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="KSV-fU-Ic6"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hVQ-nZ-O99">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -805,7 +860,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igd-HG-o03" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="874" y="1218"/>
+            <point key="canvasLocation" x="-239" y="913"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="xxN-2u-9g3">
@@ -919,7 +974,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1050,6 +1105,7 @@
                         <outlet property="searchBar" destination="WfS-Ey-5vR" id="0JM-3R-lVB"/>
                         <segue destination="C8h-k1-Hmt" kind="show" identifier="DetailViewController" id="KcV-dV-Shm"/>
                         <segue destination="rOm-ha-KFh" kind="presentation" identifier="goToSettings" modalPresentationStyle="fullScreen" id="egV-TJ-NKu"/>
+                        <segue destination="7Bc-Y5-Avu" kind="show" identifier="TabController" id="9SK-5N-zaH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
