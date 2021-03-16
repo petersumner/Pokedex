@@ -37,7 +37,7 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
-                                            <imageReference key="image" image="chevron.backward.circle.fill" catalog="system" symbolScale="large"/>
+                                            <imageReference key="image" image="arrow.backward.circle.fill" catalog="system" symbolScale="large"/>
                                         </state>
                                         <connections>
                                             <action selector="backBtnPressed:" destination="gS1-4t-YuX" eventType="touchUpInside" id="Es0-fB-xL0"/>
@@ -104,6 +104,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gm-Ka-hNO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="N5v-gG-Eul">
                                 <rect key="frame" x="16" y="68" width="120" height="120"/>
                                 <constraints>
@@ -763,16 +767,20 @@
                         <constraints>
                             <constraint firstItem="vFW-IH-3Ca" firstAttribute="leading" secondItem="D5r-i9-u2q" secondAttribute="leading" constant="16" id="0DD-Ek-h4q"/>
                             <constraint firstItem="N5v-gG-Eul" firstAttribute="top" secondItem="qhb-Xu-IhB" secondAttribute="bottom" constant="8" id="0Pz-Me-zDD"/>
+                            <constraint firstAttribute="bottom" secondItem="5gm-Ka-hNO" secondAttribute="bottom" id="3ka-gU-x5u"/>
                             <constraint firstItem="N1e-Wp-gGz" firstAttribute="top" secondItem="85a-Zp-Hdx" secondAttribute="bottom" id="FsC-tC-D4e"/>
                             <constraint firstItem="l5Y-wc-YUy" firstAttribute="top" secondItem="N5v-gG-Eul" secondAttribute="bottom" constant="8" symbolic="YES" id="GCf-5V-ddb"/>
                             <constraint firstItem="m4k-Y9-ahp" firstAttribute="top" secondItem="N1e-Wp-gGz" secondAttribute="bottom" constant="4" id="GIs-Rk-6nm"/>
                             <constraint firstItem="m4k-Y9-ahp" firstAttribute="leading" secondItem="N5v-gG-Eul" secondAttribute="trailing" constant="8" symbolic="YES" id="Inz-P6-yjF"/>
                             <constraint firstItem="85a-Zp-Hdx" firstAttribute="top" secondItem="P6W-J9-wUT" secondAttribute="bottom" id="JXF-Ln-GrK"/>
+                            <constraint firstItem="5gm-Ka-hNO" firstAttribute="top" secondItem="D5r-i9-u2q" secondAttribute="top" id="KGQ-er-9c1"/>
                             <constraint firstItem="vFW-IH-3Ca" firstAttribute="top" secondItem="l5Y-wc-YUy" secondAttribute="bottom" constant="15" id="LMu-Li-FEf"/>
                             <constraint firstItem="qhb-Xu-IhB" firstAttribute="top" secondItem="D5r-i9-u2q" secondAttribute="top" id="MXM-wc-tcc"/>
                             <constraint firstAttribute="trailing" secondItem="l5Y-wc-YUy" secondAttribute="trailing" constant="16" id="RzT-Qf-VfM"/>
                             <constraint firstItem="N1e-Wp-gGz" firstAttribute="leading" secondItem="N5v-gG-Eul" secondAttribute="trailing" constant="8" symbolic="YES" id="TFC-Mf-ibd"/>
+                            <constraint firstAttribute="trailing" secondItem="5gm-Ka-hNO" secondAttribute="trailing" id="Vn8-9A-sBT"/>
                             <constraint firstItem="P6W-J9-wUT" firstAttribute="top" secondItem="qhb-Xu-IhB" secondAttribute="bottom" constant="8" symbolic="YES" id="XOP-06-RbQ"/>
+                            <constraint firstItem="5gm-Ka-hNO" firstAttribute="leading" secondItem="D5r-i9-u2q" secondAttribute="leading" id="eoN-AX-3Hi"/>
                             <constraint firstItem="85a-Zp-Hdx" firstAttribute="leading" secondItem="N5v-gG-Eul" secondAttribute="trailing" constant="8" symbolic="YES" id="gW1-C6-ogj"/>
                             <constraint firstItem="N5v-gG-Eul" firstAttribute="leading" secondItem="D5r-i9-u2q" secondAttribute="leading" constant="16" id="kHl-xB-TAm"/>
                             <constraint firstItem="l5Y-wc-YUy" firstAttribute="leading" secondItem="D5r-i9-u2q" secondAttribute="leading" constant="16" id="ksp-fd-a2P"/>
@@ -815,6 +823,7 @@
                         <outlet property="hpLbl" destination="aK2-y7-Jha" id="dc1-Sa-Eas"/>
                         <outlet property="hpText" destination="RIJ-r4-JUG" id="IMv-s3-RVa"/>
                         <outlet property="iceLbl" destination="koe-rR-d6v" id="r43-Z0-XLe"/>
+                        <outlet property="loadingView" destination="5gm-Ka-hNO" id="Jvb-xC-qCC"/>
                         <outlet property="mainImg" destination="N5v-gG-Eul" id="Gj7-df-a5B"/>
                         <outlet property="nameLbl" destination="pJp-kF-xhz" id="uVe-J3-hie"/>
                         <outlet property="normalLbl" destination="euL-NB-0hI" id="F0b-UF-uvb"/>
@@ -839,7 +848,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0N-Me-QzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="566" y="913"/>
+            <point key="canvasLocation" x="565.60000000000002" y="912.5937031484259"/>
         </scene>
         <!--Tab Controller-->
         <scene sceneID="B59-1E-b5u">
@@ -886,7 +895,7 @@
                                             <constraint firstAttribute="width" constant="32" id="otV-sG-Lu2"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="chevron.backward.circle.fill" catalog="system">
+                                        <state key="normal" image="arrow.backward.circle.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                         </state>
                                         <connections>

@@ -62,10 +62,13 @@ class StatViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var fairyLbl: UILabel!
     
     @IBOutlet weak var hiddenView: UIStackView!
+    @IBOutlet var loadingView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        splashScreen()
+                
         labels = ["normal" : normalLbl, "fighting" : fightingLbl, "flying" : flyingLbl, "poison" : poisonLbl, "ground" : groundLbl, "rock" : rockLbl, "bug" : bugLbl, "ghost" : ghostLbl, "steel" : steelLbl, "fire" : fireLbl, "water" : waterLbl, "grass" : grassLbl, "electric" : electricLbl, "psychic" : psychicLbl, "ice" : iceLbl, "dragon" : dragonLbl, "dark" : darkLbl, "fairy" : fairyLbl]
         
         pokemon.downloadPokemonDetail {
@@ -79,7 +82,7 @@ class StatViewController: UIViewController, UITabBarControllerDelegate {
         let bgImg = UIImageView(image: UIImage(named: "\(pokemon.types[0].lowercased())BG"))
         bgImg.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.bounds.size.height / 2 - 20)
         bgImg.transform = CGAffineTransform(scaleX: screenSize.width / 700, y: screenSize.height / 1200)
-        self.view.insertSubview(bgImg, at: 0)
+        //self.view.insertSubview(bgImg, at: 0)
         nameLbl.text = pokemon.name
         
         if pokemon.pokedexID < 10 {
@@ -109,7 +112,7 @@ class StatViewController: UIViewController, UITabBarControllerDelegate {
         
         typeLbl.text = pokemon.types.joined(separator: " / ")
         
-        header.backgroundColor = colors[pokemon.types[0]]
+        header.backgroundColor = colors[pokemon.types[0].lowercased()]
         typeText.textColor = colors[pokemon.types[0].lowercased()]
         hpText.textColor = colors[pokemon.types[0].lowercased()]
         attacktext.textColor = colors[pokemon.types[0].lowercased()]
@@ -184,6 +187,27 @@ class StatViewController: UIViewController, UITabBarControllerDelegate {
                 }
             }
         }
+    }
+    
+    func splashScreen() {
+        var splash = ""
+        switch defaults.string(forKey: "Theme") {
+        case "Fire":
+            splash = "Charmeleon"
+        case "Water":
+            splash = "Wartortle"
+        case "Grass":
+            splash = "Ivysaur"
+        default:
+            splash = "Pikachu"
+        }
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: splash)?.draw(in: self.view.bounds)
+        let bgImg: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        loadingView.backgroundColor = UIColor(patternImage: bgImg)
+        loadingView.bringSubviewToFront(self.view)
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
